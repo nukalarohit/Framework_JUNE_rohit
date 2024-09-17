@@ -57,5 +57,5 @@ def uniqueness_check(source, target,spark, uniqueness_cols):
         if uniquefailed>0:
             print(f"no of duplicates in column {cols} are :  {uniquefailed}")
         else:
-            print(f"There are NO duplicates in column {cols} ")
+            print(f"There are NO duplicates PRESENT in column {cols} ")
         print()
