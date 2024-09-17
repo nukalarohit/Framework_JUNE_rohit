@@ -42,6 +42,20 @@ def data_compare(source, target, spark):
     source_target_compare_cnt = source_target_compare.count()
     print(source_target_compare_cnt)
     if source_target_compare_cnt > 0:
-        print("source data and target does now match")
+        print("source data and target does not match")
     else:
         print("source data is MATCHING with  target")
+
+
+def uniqueness_check(source, target,spark, uniqueness_cols):
+    lstcols=uniqueness_cols.split(',')
+    target.createOrReplaceTempView("sqltarget")
+    for cols in lstcols:
+        uniquecount=spark.sql(f"select {cols},count(*) from sqltarget group by {cols} having count(*)>1")
+        uniquecount.show()
+        uniquefailed=uniquecount.count()
+        if uniquefailed>0:
+            print(f"no of duplicates in column {cols} are :  {uniquefailed}")
+        else:
+            print(f"There are NO duplicates in column {cols} ")
+        print()
