@@ -1,0 +1,11 @@
+empid|employee|salary|managerid
+123|venu|10000|129
+124|kumar|11000|123
+125|prakash|9000|123
+126|murali|30000|123
+127|prem|12000|128
+128|raja|11000|120
+129|subbu|10000|123
+122|kali|12000|123
+121|nani|12000|123
+120|pratima|10999|190
