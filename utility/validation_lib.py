@@ -36,14 +36,14 @@ def null_value_check(source,target, spark, row, validation, out, nullcols):
             print(f"{failed} NULL values present in {i} ")
             write_output(validation_type=validation, source_name=row['source'], target_name=row['target']
                          , no_of_source_record_count=source_cnt, no_of_target_record_count=target_cnt
-                         , failed_count=failed, column=row['null_col_list'], status='PASS',
+                         , failed_count=failed, column=i, status='PASS',
                          source_type=row['source_type'],
                          target_type=row['target_type'], out=out)
         else:
             print("NO NULL values present")
             write_output(validation_type=validation, source_name=row['source'], target_name=row['target']
                          , no_of_source_record_count=source_cnt, no_of_target_record_count=target_cnt
-                         , failed_count=failed, column=row['null_col_list'], status='FAIL',
+                         , failed_count=failed, column=i, status='FAIL',
                          source_type=row['source_type'],
                          target_type=row['target_type'], out=out)
 
