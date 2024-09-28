@@ -1,4 +1,5 @@
-lst=['a','c','d','e']
-str1=str(lst)
-str1.sort()
-print(lst)
+fb = open(r"C:\Users\india\Desktop\ETL Testing\Python\files\firstfile.txt", "r")
+# s=fb.read()
+# print(s)
+g=fb.readline(24)
+print(g)
